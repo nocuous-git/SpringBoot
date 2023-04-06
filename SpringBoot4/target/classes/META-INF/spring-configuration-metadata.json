@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.nhr.springboot4.config.MyDataSourceConfig",
+      "sourceMethod": "DataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

@@ -1,0 +1,10 @@
+spring:
+  web:
+    resources:
+      static-locations:
+        [classpath:/html/,classpath:/static/]
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true #开启页面表单的Rest功能

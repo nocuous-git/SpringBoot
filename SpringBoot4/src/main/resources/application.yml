@@ -1,0 +1,41 @@
+mvc:
+  hiddenmethod:
+    filter:
+      enabled: true
+spring:
+  aop:
+    auto: false
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_account
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    druid:
+      aop-patterns: com.nhr.springboot4
+      filters: stat,wall
+
+      stat-view-servlet:
+        enabled: true
+        login-password: 123456
+        login-username: admin
+        reset-enable: false
+
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+          enabled: true
+        wall:
+          enabled: true
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
